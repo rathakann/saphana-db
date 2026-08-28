@@ -61,7 +61,12 @@ Malformed UTF-8 characters, possibly incorrectly encoded
 Always select only the columns required by the report.
 ``` php
 $data = BusinessPartner::query()
+    ->select([
+        'CardCode',
+        'CardName',
+        'CreateDate',
+    ])
     ->orderBy('CardCode')
     ->lazy()
-    ->take(20)
+    ->take(10)
     ->all();
