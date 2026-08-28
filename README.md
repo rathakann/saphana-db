@@ -6,23 +6,23 @@ The implementation is designed primarily for **read-only reporting**, not SAP tr
 In `config/database.php`:
 ```php
 'saphana' => [
-    'driver' => 'odbc',
-    'dsn' => 'odbc:DRIVER={HDBODBC};SERVERNODE=' .
-        env('HANA_HOST') . ':' .
-        env('HANA_PORT', 30015) .
-        ';DATABASE=' .
-        env('HANA_DATABASE') .
-        ';CHAR_AS_UTF8=TRUE',
-    'host' => env('HANA_HOST'),
-    'port' => env('HANA_PORT', 30015),
-    'database' => env('HANA_DATABASE'),
-    'username' => env('HANA_USERNAME'),
-    'password' => env('HANA_PASSWORD'),
-    'prefix' => '',
-    'options' => [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    ],
-],
+            'driver' => 'saphana',
+            'dsn' => 'odbc:DRIVER={HDBODBC};SERVERNODE=' . env('HANA_HOST') . ':' . env('HANA_PORT', 30015) . ';DATABASE=' . env('HANA_DATABASE') . ';CHAR_AS_UTF8=TRUE',
+            'host' => env('HANA_HOST'),
+            'port' => env('HANA_PORT', 30015),
+            'database' => env('HANA_DATABASE'),
+            'username' => env('HANA_USERNAME'),
+            'password' => env('HANA_PASSWORD'),
+            'prefix' => '',
+            'options' => [
+                \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+                /*
+                    * We don't use PDO prepared statements in HanaConnection,
+                    * so this setting is not important for query execution.
+                */
+                \PDO::ATTR_EMULATE_PREPARES => true,
+            ],
+        ],
 ``` 
 
 # 2. Important Note: Avoid `SELECT *`
