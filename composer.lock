@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0a1e58a31c4cbbf9dad08f4e6105b568",
+    "content-hash": "b3cf5eb003b410a68eec41af8117968f",
     "packages": [
         {
             "name": "brick/math",
@@ -134,72 +134,6 @@
                 }
             ],
             "time": "2024-02-09T16:56:22+00:00"
-        },
-        {
-            "name": "dbt/odbc-driver",
-            "version": "5.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/DeBoerTool/odbc-driver.git",
-                "reference": "d079a9b50257cd639f3c6300d979c74c1144dcfc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/DeBoerTool/odbc-driver/zipball/d079a9b50257cd639f3c6300d979c74c1144dcfc",
-                "reference": "d079a9b50257cd639f3c6300d979c74c1144dcfc",
-                "shasum": ""
-            },
-            "require": {
-                "ext-pdo": "*",
-                "illuminate/database": "^12.0|^13.0",
-                "illuminate/support": "^12.0|^13.0",
-                "php": "8.2.*|8.3.*|8.4.*|8.5.*"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.69",
-                "orchestra/testbench": "^10.0|^11.0",
-                "phpunit/phpunit": "^11.5"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Dbt\\Odbc\\OdbcServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Dbt\\Odbc\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "tck",
-                    "email": "ben@thecreativekind.co.uk"
-                },
-                {
-                    "name": "Daniel S. Deboer",
-                    "email": "daniel.s.deboer@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "ODBC Driver for Laravel 12+",
-            "keywords": [
-                "database",
-                "driver",
-                "laravel",
-                "odbc"
-            ],
-            "support": {
-                "issues": "https://github.com/DeBoerTool/odbc-driver/issues",
-                "source": "https://github.com/DeBoerTool/odbc-driver/tree/5.0.2"
-            },
-            "time": "2026-06-12T15:01:29+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
