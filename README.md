@@ -3,6 +3,10 @@ This project uses Laravel 13 Eloquent with SAP HANA through the `pdo_odbc` / `HD
 The implementation is designed primarily for **read-only reporting**, not SAP transaction creation, updating, or deletion.
 ---
 # 1. SAP HANA Database Configuration
+
+=> Install SAP HANA Client for Linux or Window from above Website
+https://tools.hana.ondemand.com/?utm_source=chatgpt.com#hanatools
+
 In `config/database.php`:
 ```php
 'saphana' => [
@@ -16,10 +20,6 @@ In `config/database.php`:
             'prefix' => '',
             'options' => [
                 \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
-                /*
-                    * We don't use PDO prepared statements in HanaConnection,
-                    * so this setting is not important for query execution.
-                */
                 \PDO::ATTR_EMULATE_PREPARES => true,
             ],
         ],
